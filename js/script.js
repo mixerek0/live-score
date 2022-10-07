@@ -53,56 +53,56 @@ function playersStats() {
         console.log(responseData);
         // calculate avg elo of teams 
         
-        // const team1Array = new Array(5);
-        // const team2Array = new Array(5);
-        // for (let i = 0; i < responseData.items.length; i++) {
-        //     team1Array[i] = new Array(5);
-        //     team2Array[i] = new Array(5);
-        //     for (let j = 0; j < 5; j++) {
-        //         team1Array[i][j] = responseData.items[i].teams.faction1.roster[j].player_id;
-        //         team2Array[i][j] = responseData.items[i].teams.faction2.roster[j].player_id;
-        //     }
-        // }
+        const team1Array = new Array(5);
+        const team2Array = new Array(5);
+        for (let i = 0; i < responseData.items.length; i++) {
+            team1Array[i] = new Array(5);
+            team2Array[i] = new Array(5);
+            for (let j = 0; j < 5; j++) {
+                team1Array[i][j] = responseData.items[i].teams.faction1.roster[j].player_id;
+                team2Array[i][j] = responseData.items[i].teams.faction2.roster[j].player_id;
+            }
+        }
 
-        // // get players elo from team1array and team2array 
-        // const team1elo = new Array(5);
-        // const team2elo = new Array(5);
-        // for (let i = 0; i < responseData.items.length; i++) {
-        //     team1elo[i] = new Array(5);
-        //     team2elo[i] = new Array(5);
-        //     for (let j = 0; j < 5; j++) {
-        //         team1elo[i][j] = await fetch(`https://open.faceit.com/data/v4/players/${team1Array[i][j]}`,{
-        //             method: 'GET',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //                 'Authorization': 'Bearer 9a2b4ca1-ff83-4b80-be68-524433ed779e'
-        //             }
-        //         })
-        //         .then((response) => response.json())
-        //         .then((responseData) => {
-        //             return responseData.games.csgo.faceit_elo;
-        //         })
-        //         .catch((error) => {
-        //             console.error(error);
-        //         });
-        //         team2elo[i][j] = await fetch(`https://open.faceit.com/data/v4/players/${team2Array[i][j]}`,{
-        //             method: 'GET',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //                 'Authorization': 'Bearer 9a2b4ca1-ff83-4b80-be68-524433ed779e'
-        //             }
-        //         })
-        //         .then((response) => response.json())
-        //         .then((responseData) => {
-        //             return responseData.games.csgo.faceit_elo ;
-        //         })
-        //         .catch((error) => {
-        //             console.error(error);
-        //         });
-        //     }
-        // }
+        // get players elo from team1array and team2array 
+        const team1elo = new Array(5);
+        const team2elo = new Array(5);
+        for (let i = 0; i < responseData.items.length; i++) {
+            team1elo[i] = new Array(5);
+            team2elo[i] = new Array(5);
+            for (let j = 0; j < 5; j++) {
+                team1elo[i][j] = await fetch(`https://open.faceit.com/data/v4/players/${team1Array[i][j]}`,{
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 9a2b4ca1-ff83-4b80-be68-524433ed779e'
+                    }
+                })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    return responseData.games.csgo.faceit_elo;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+                team2elo[i][j] = await fetch(`https://open.faceit.com/data/v4/players/${team2Array[i][j]}`,{
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 9a2b4ca1-ff83-4b80-be68-524433ed779e'
+                    }
+                })
+                .then((response) => response.json())
+                .then((responseData) => {
+                    return responseData.games.csgo.faceit_elo ;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+            }
+        }
 
-        // console.log(team1elo, team2elo);
+        console.log(team1elo, team2elo);
 
 
 
