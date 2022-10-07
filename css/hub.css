@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-color: #252525;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.loader{
+    background: #252525;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.disappear{
+    display: none;
+    animation: vanish 0.3s ease-in-out;
+}
+
+@keyframes vanish{
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 0.75;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.25;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+.match-list{ 
+    background-color: #29292b;
+    height: 500px;
+    width: 1500px;
+    border-radius: 20px;
+    margin: 30px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 1);
+}
+.team1{
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+.team1 p{
+    text-align: center;
+}
+.team2{
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+.team1-info{
+    color: white;
+    width: 100%;
+    height: 10%;
+}
+
+.team1-info-name{
+    margin-left: 200px;
+}
+
+
+.team2-info{
+    color: white;
+    width: 100%;
+    height: 10%;
+}
+
+.team2-info-name{
+    margin-left: 200px;
+}
+
+.info-about-match{
+    color: black;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+
+.player1{
+    margin: 0 50px 30px 0;
+}
+.player2{
+    margin: 0 50px 30px 0;
+}
+.player3{
+    margin: 0 50px 30px 0;
+}
+.player4{
+    margin: 0 50px 30px 0;
+}
+.player5{
+    margin: 0 50px 0px 0;
+}
+.player6{
+    margin: 0 50px 30px 0;
+}
+.player7{
+    margin: 0 50px 30px 0;
+}
+.player8{
+    margin: 0 0 30px 0;
+}
+.player9{
+    margin: 0 0 30px 0;
+}
+.player10{
+    margin: 0 0 0px 0;
+}
+
+#playerimg {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50px;
+}
+#player2img {
+    width: 50px;
+    height: 50px;
+    float: right;
+    border-radius: 50px;
+}
